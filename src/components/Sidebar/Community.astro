@@ -1,0 +1,49 @@
+---
+const communities = [
+    {
+        id: "https://pbs.twimg.com/community_banner_img/1875455576622428163/RwC-2U6W?format=jpg&name=240x240",
+        name: "Psyop Bangers",
+    },
+    {
+        id: "https://pbs.twimg.com/community_banner_img/1882641639585595392/eCFVo6U_?format=jpg&name=240x240",
+        name: "Weebfit",
+    },
+    {
+        id: "https://pbs.twimg.com/community_banner_img/1883541129397706752/g2yEFeRd?format=jpg&name=240x240",
+        name: "X Streamers",
+    },
+    {
+        id: "https://pbs.twimg.com/community_banner_img/1875485344373645313/eKbZeuyy?format=jpg&name=240x240",
+        name: "Burger Posting",
+    },
+    {
+        id: "https://pbs.twimg.com/community_banner_img/1875290326975578112/D03W1FK2?format=jpg&name=240x240",
+        name: "Totally Unhinged Software Developers",
+    },
+];
+---
+
+<li>
+    <div class="text-xs/6 font-semibold text-gray-400">Communities</div>
+    <ul role="list" class="-mx-2 mt-2 space-y-1">
+        {
+            communities.map((community) => {
+                const { id, name } = community;
+                return (
+                    <li>
+                        <a
+                            href="#"
+                            class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-400 hover:bg-gray-800 hover:text-white items-center"
+                        >
+                            <div
+                                class="rounded-xl bg-cover bg-center"
+                                style={`width: 40px; height: 40px; background-image: url('${id}');`}
+                            />
+                            <span class="truncate">{name}</span>
+                        </a>
+                    </li>
+                );
+            })
+        }
+    </ul>
+</li>
